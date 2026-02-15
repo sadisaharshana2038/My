@@ -1,0 +1,98 @@
+{
+  "name": "Telegram Subtitle Bot",
+  "description": "Professional subtitle bot with auto-indexing, search, TMDB integration, and advanced features",
+  "repository": "https://github.com/yourusername/telegram-subtitle-bot",
+  "logo": "https://telegra.ph/file/subtitle-bot-logo.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "subtitles",
+    "pyrogram",
+    "mongodb",
+    "tmdb"
+  ],
+  "env": {
+    "API_ID": {
+      "description": "Get from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get from @BotFather on Telegram",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Your bot username (without @)",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB connection URI (use MongoDB Atlas free tier)",
+      "required": true
+    },
+    "DATABASE_NAME": {
+      "description": "MongoDB database name",
+      "value": "subtitle_bot",
+      "required": false
+    },
+    "SOURCE_CHANNEL_ID": {
+      "description": "Channel ID to index files from (negative ID)",
+      "required": true
+    },
+    "UPDATE_CHANNEL_ID": {
+      "description": "Channel for new file notifications (optional)",
+      "required": false
+    },
+    "ADMIN_CHANNEL_ID": {
+      "description": "Channel for admin notifications (optional)",
+      "required": false
+    },
+    "FORCE_SUB_CHANNEL": {
+      "description": "Channel users must join to use bot (optional)",
+      "required": false
+    },
+    "ADMIN_IDS": {
+      "description": "Comma-separated admin user IDs",
+      "required": true
+    },
+    "TMDB_API_KEY": {
+      "description": "TMDB API key from https://www.themoviedb.org/settings/api",
+      "required": true
+    },
+    "WELCOME_IMAGE": {
+      "description": "Welcome image URL (Telegraph or t.me link) - Optional",
+      "required": false
+    },
+    "HELP_IMAGE": {
+      "description": "Help image URL - Optional",
+      "required": false
+    },
+    "STATS_IMAGE": {
+      "description": "Stats image URL - Optional",
+      "required": false
+    },
+    "PROFILE_IMAGE": {
+      "description": "Profile image URL - Optional",
+      "required": false
+    },
+    "LOG_LEVEL": {
+      "description": "Logging level",
+      "value": "INFO",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-22"
+}
